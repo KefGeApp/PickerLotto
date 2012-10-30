@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Choose a number.." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="251" translatesAutoresizingMaskIntoConstraints="NO" id="ddm-OZ-pJI">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="9vd-ct-YeL"/>
+                                    <constraint firstAttribute="width" constant="251" id="ED4-RU-HLn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Jz-Wc-Wuq">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="Ail-1K-SW8"/>
+                                    <constraint firstAttribute="width" constant="199" id="TFL-tM-OeA"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="A45-jK-exH"/>
+                                    <outlet property="delegate" destination="2" id="LNK-Fh-aDh"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uqc-w1-5KG">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Check Your Number">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkEntry:" destination="2" eventType="touchUpInside" id="ugh-47-1ec"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Uqc-w1-5KG" firstAttribute="centerX" secondItem="4Jz-Wc-Wuq" secondAttribute="centerX" type="default" id="FSs-xd-qaf"/>
+                            <constraint firstAttribute="bottom" secondItem="Uqc-w1-5KG" secondAttribute="bottom" constant="58" id="MCL-D3-6hQ"/>
+                            <constraint firstItem="4Jz-Wc-Wuq" firstAttribute="top" secondItem="3" secondAttribute="top" constant="102" id="YgP-WW-zcF"/>
+                            <constraint firstItem="Uqc-w1-5KG" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="bLv-nb-hMv"/>
+                            <constraint firstItem="ddm-OZ-pJI" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="cTO-Uy-yGL"/>
+                            <constraint firstItem="4Jz-Wc-Wuq" firstAttribute="centerX" secondItem="ddm-OZ-pJI" secondAttribute="centerX" type="default" id="w5m-uK-H9I"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="picker" destination="4Jz-Wc-Wuq" id="Pgg-QV-1gH"/>
+                        <outlet property="prompt" destination="ddm-OZ-pJI" id="ZUO-qj-gYR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="checkEntry:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="picker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="prompt" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
